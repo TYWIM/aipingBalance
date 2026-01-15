@@ -65,4 +65,4 @@ Authorization: Bearer <your-api-key>
 
 ## 📄 License
 
-MIT
+GPL-3.0 许可证
