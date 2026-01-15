@@ -128,7 +128,12 @@ const queryBalance = async () => {
   showResult.value = false
 
   try {
-    const response = await axios.get('/api/v1/user/remain/points', {
+    // 开发环境用 Vite 代理，生产环境用 Netlify Functions
+    const apiUrl = import.meta.env.DEV 
+      ? '/api/v1/user/remain/points' 
+      : '/api/balance'
+    
+    const response = await axios.get(apiUrl, {
       headers: {
         'Authorization': `Bearer ${apiKey.value.trim()}`
       }
