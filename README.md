@@ -1,6 +1,6 @@
-# AIPing 余额查询
+# API 余额查询工具
 
-一个优雅的 AIPing 平台余额查询工具，基于 Vue 3 + Element Plus 构建。
+一个优雅的 AI 平台余额查询工具，支持 AIPing 和硅基流动，基于 Vue 3 + Element Plus 构建。
 
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vue.js)
 ![Element Plus](https://img.shields.io/badge/Element%20Plus-2.9-409EFF)
@@ -8,11 +8,12 @@
 
 ## ✨ 特性
 
-- 🎨 粒子动效背景
+- 🎨 粒子动效背景（随平台切换变色）
 - 💫 流畅的入场动画
 - 🔐 API Key 安全输入（支持显示/隐藏）
-- 📊 余额分类展示（总余额、充值余额、赠送余额）
+- 📊 余额分类展示
 - 📱 响应式设计，移动端友好
+- 🔄 支持多平台切换（AIPing / 硅基流动）
 
 ## 🚀 快速开始
 
@@ -30,8 +31,9 @@ npm run build
 ## 📖 使用说明
 
 1. 启动项目后访问 http://localhost:3000
-2. 输入你的 AIPing API Key（格式：`QC-xxxxxxxx-xxxxxxxxxxxx`）
-3. 点击「查询余额」按钮
+2. 选择要查询的平台（AIPing 或 硅基流动）
+3. 输入对应平台的 API Key
+4. 点击「查询余额」按钮
 
 ## 🔧 技术栈
 
@@ -41,28 +43,20 @@ npm run build
 - [Vite](https://vitejs.dev/) - 下一代前端构建工具
 - [Axios](https://axios-http.com/) - HTTP 客户端
 
-## 📝 API 文档
+## 📝 支持的平台
 
-基于 [AIPing 官方 API](https://aiping.cn)：
+### AIPing
+- API Key 格式：`QC-xxxxxxxx-xxxxxxxxxxxx`
+- [官网](https://aiping.cn)
 
-```
-GET https://aiping.cn/api/v1/user/remain/points
-Authorization: Bearer <your-api-key>
-```
+### 硅基流动 (SiliconFlow)
+- API Key 格式：`sk-xxxxxxxxxxxxxxxx`
+- [官网](https://siliconflow.cn)
 
-响应示例：
-```json
-{
-  "code": 0,
-  "msg": "OK",
-  "data": {
-    "gift_remain": 10.5,
-    "recharge_remain": 89.5,
-    "total_remain": 100.0
-  }
-}
-```
+## 🚀 部署
+
+支持腾讯云 EdgeOne Pages 部署，已配置 Edge Functions 处理 CORS。
 
 ## 📄 License
 
-GPL-3.0 许可证
+MIT

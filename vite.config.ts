@@ -10,6 +10,12 @@ export default defineConfig({
         target: 'https://aiping.cn',
         changeOrigin: true,
         secure: true
+      },
+      '/siliconflow': {
+        target: 'https://api.siliconflow.cn',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/siliconflow/, '')
       }
     }
   }
